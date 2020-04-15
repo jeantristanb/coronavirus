@@ -21,11 +21,12 @@ ListeOtherCount<-CoCaseOtherC[order(abs(CoCaseMean[CoCaseMean$Country==Country,'
 my_title <- paste("Coronavirus in",Country)
 rmarkdown::render_site()
 
-newhtlm=paste('allcountry/',gsub(' ','_',Country),'.html',sep='')
+newhtlm=paste(gsub(' ','_',Country),'.html',sep='')
 file.copy('allcountry/index.html', newhtlm)
 if(Cmt>3){
 q()
 }
+Cmt<-Cmt+1
 }
 
 
